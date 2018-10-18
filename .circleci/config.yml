@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
         # specify the version you desire here
-        - image: circleci/node:7.10
+        - image: cypress/base:8
         steps:
         - checkout
         - restore_cache:
@@ -12,6 +12,7 @@ jobs:
             - v1-npm-deps
         - run:
             - npm install
+            - npm start
             - npm test
         - save_cache:
             key: v1-npm-deps-{{ checksum "package.json" }}
