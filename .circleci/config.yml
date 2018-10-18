@@ -4,8 +4,8 @@ jobs:
     docker:
         # specify the version you desire here
         image: cypress/base:8
-        steps:
-        - checkout
+        - steps:
+            - checkout
         - restore_cache:
             keys:
             - v1-npm-deps-{{ checksum "package.json" }}
